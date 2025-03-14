@@ -1,0 +1,526 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@600&family=Poppins:wght@300;400;700&display=swap');
+
+/* ================================= */
+/* 🔥 Global Styles & Reset */
+/* ================================= */
+body {
+    background-color: #000;
+    overflow: auto; /* Allows scrolling */
+    -ms-overflow-style: none; /* Hides scrollbar in IE & Edge */
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
+}
+
+/* Remove default margins, paddings, and set font globally */
+* {
+    color: white;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Hide scrollbar for Chrome, Safari */
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* ================================= */
+/* 🔥 First Section (Hero) */
+/* ================================= */
+.first {
+    border-bottom: 4px solid rgb(102, 102, 102);
+    background: linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.65)), url("assets/images/bg.jpg");
+    width: 100%;
+    height: 90vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* ================================= */
+/*  Header Section (Logo + Buttons) */
+/* ================================= */
+.head {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Default Logo for Large Screens */
+.logo {
+    height: 70px;
+    width: 110px;
+    margin-left: 20px;
+    content: url("assets/images/logo.svg");
+}
+
+/* Logo for Tablets & Phones */
+@media (max-width: 658px) {
+    .logo {
+        content: url("assets/images/netflix.png"); /* Switch to netflix.png */
+        height: 60px;
+        width: auto;
+    }
+}
+
+/* Button Container */
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-right: 20px;
+}
+
+/* Button Styling */
+.btn1, .btn2 {
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.611);
+    color: rgba(255, 255, 255, 0.797);
+    cursor: pointer;
+}
+
+.btn1 {
+    background: transparent;
+}
+
+.btn2 {
+    background: rgba(248, 25, 25, 0.952);
+    color: white;
+}
+
+/* Hover Effects */
+.btn2:hover, .btn3:hover {
+    background-color: rgba(247, 20, 20, 0.756);
+}
+
+/* ================================= */
+/*  Hero Section Content */
+/* ================================= */
+.top-mid {
+    max-width: 600px;
+    text-align: center;
+    margin-top: 80px;
+}
+
+/* Subheading & Title */
+.subtext, .hd1 {
+    margin: 16px;
+}
+
+.hd1 {
+    font-size: 30px;
+}
+
+/* ================================= */
+/*  Email Input & Button */
+/* ================================= */
+.email-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Email Input */
+.in {
+    padding: 12px;
+    width: 100%;
+    max-width: 350px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background: transparent;
+    color: white;
+    border-radius: 4px;
+    text-align: left;
+    margin: 8px;
+}
+
+/* Input Placeholder */
+.in::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Get Started Button */
+.btn3 {
+    padding: 12px 15px;
+    background: red;
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    white-space: nowrap;
+    margin: 8px;
+}
+
+/* ================================= */
+/* 📱 Responsive Design (Tablets & Phones) */
+/* ================================= */
+@media (max-width: 658px) {
+    /* Header */
+    .head {
+        flex-direction: row; /* Keep header in the same row */
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    .buttons {
+        flex-direction: row; /* Ensures buttons stay in the same row */
+        align-items: center;
+        gap: 5px;
+    }
+
+    .btn1, .btn2 {
+        width: auto;
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    /* Hero Section */
+    .top-mid {
+        margin-top: 100px;
+        width: 90%;
+    }
+
+    /* Email Box */
+    .email-box {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .in {
+        width: 75%;
+    }
+
+    .btn3 {
+        width: 33%;
+        font-size: 9px;
+    }
+
+    .hd1 {
+        font-size: 25px;
+    }
+}
+
+
+
+
+/* ======================================= */
+/* 🔥 Mid Section: Feature Cards */
+/* ======================================= */
+.mid {
+    background-color: #000;
+    width: 100%;
+    padding: 12px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* 🔹 1st & 3rd Cards: Image First */
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    border-bottom: 4px solid rgb(102, 102, 102);
+}
+
+/* 🔹 2nd & 4th Cards: Content First */
+.card-reverse {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    border-bottom: 4px solid rgb(102, 102, 102);
+}
+
+/* ======================================= */
+/*  Text Content Styling */
+/* ======================================= */
+.cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 75%;
+}
+
+.cont h1 {
+    font-size: 35px;
+    margin-bottom: 18px;
+}
+
+.cont p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* ======================================= */
+/*  Image & Video Box Styling */
+/* ======================================= */
+.media-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* TV Image */
+.card-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+/* Video Inside TV */
+.vid {
+    position: absolute;
+    top: 10%;
+    left: 14%;
+    width: 72%;
+    height: 60%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* Mobile Image */
+.media-box1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.card-img1 {
+    width: 100%;
+    max-width: 300px;
+}
+
+/* ======================================= */
+/* 📱 Responsive Design (Tablets & Phones) */
+/* ======================================= */
+@media (max-width: 658px) {
+    
+    /* Reverse Cards Stack Correctly */
+    .card-reverse {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    /* Adjust Image & Content Layout */
+    .media-box1, .media-box {
+        max-width: 440px;
+        margin: 0 auto;
+    }
+
+    /* Stack Normal Cards */
+    .card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Adjust Image Sizes */
+    .card-img, .card-img1 {
+        max-width: 81%;
+    }
+
+    /* Responsive Text Sizes */
+    .cont h1 {
+        font-size: clamp(18px, 4vw, 32px);
+    }
+
+    .cont p {
+        font-size: clamp(13px, 2.5vw, 18px);
+    }
+
+    .cont {
+        margin: auto;
+        max-width: 100%;
+    }
+
+    /* Adjust Video Placement */
+    .vid {
+        top: 23%;
+        left: 12%;
+        width: 68%;
+        height: 50%;
+    }
+}
+
+
+
+
+
+
+/* ======================================= */
+/* 🔥 FAQ Section Styling */
+/* ======================================= */
+.faq {
+    background-color: #000;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 4px solid rgb(102, 102, 102);
+    padding: 50px 20px;
+}
+
+/* FAQ Title */
+.hd2 {
+    font-size: 33px;
+    margin-bottom: 20px;
+}
+/* ======================================= */
+/*  FAQ Card Styling */
+/* ======================================= */
+.faq-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 900px; /* Prevents excessive stretching */
+    background-color: rgb(65, 65, 65);
+    font-size: 16px;
+    padding: 15px;
+    margin-bottom: 10px;
+    font-weight: 400;
+    transition: background 0.4s ease-in;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Hover Effect */
+.faq-card:hover {
+    background-color: rgb(92, 91, 91);
+}
+
+/* Plus Symbol (+) */
+.plus {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: auto;
+    padding: 0 15px;
+}
+
+/* ======================================= */
+/* 📱 Responsive Design (Tablets & Phones) */
+/* ======================================= */
+@media (max-width: 768px) {
+    .faq-card {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .plus {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-card {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .plus {
+        font-size: 20px;
+    }
+}
+
+
+
+
+
+/* ======================================= */
+/* 🔥 Footer Section Styling */
+/* ======================================= */
+.footer {
+    background-color: black;
+    color: rgb(179, 179, 179);
+    text-align: center;
+    padding: 50px 20px;
+}
+
+/* ======================================= */
+/* 🔹 Footer Links Grid */
+/* ======================================= */
+.one {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+    gap: 10px;
+    max-width: 800px;
+    margin: 0 auto; /* Center content */
+    font-size: 14px;
+    text-align: left;
+}
+
+/* Footer Links */
+.links a {
+    color: rgb(179, 179, 179);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+/* ======================================= */
+/* 🔹 Footer Contact & Credit Styling */
+/* ======================================= */
+.p2 {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.num {
+    color: white;
+    font-weight: bold;
+}
+
+/* Footer Credit */
+.ft-para {
+    font-size: 12px;
+    color: rgb(210, 206, 206);
+    margin-top: 27px;
+}
+
+/* ======================================= */
+/* 📱 Responsive Design (Tablets & Phones) */
+/* ======================================= */
+@media (max-width: 768px) {
+    .one {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+        text-align: center;
+    }
+
+    .p2 {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 420px) {
+    .one {
+        grid-template-columns: repeat(1, 1fr); /* Single column on mobile */
+    }
+}
